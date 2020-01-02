@@ -1,0 +1,13 @@
+.navbar {
+    min-height: 80px;
+  }
+
+.center { 
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+#account {
+  color: rgb(160, 160, 160);
+}
