@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Card, Image} from 'react-bootstrap';
+import {Card, Button} from 'react-bootstrap';
 import post from '../img/post.png';
 
 class Display extends Component {
@@ -30,7 +30,12 @@ class Display extends Component {
                                 <Card.Text>
                                     {post.content}
                                 </Card.Text><hr />
-                                <Card.Link href="#">TIP 0.1 Ether</Card.Link>
+                                <Button variant="link" name={post.id.toNumber()}
+                                onClick={(event)=>{
+                                    let tipAmount = window.web3.utils.toWei('0.1', 'Ether')
+                                    this.props.postCredit(event.target.name, tipAmount)
+                                }}
+                                >TIP 0.1 Ether</Button>
                             </Card.Body>
                         </Card>
                     );

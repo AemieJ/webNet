@@ -7,3 +7,37 @@
     color: rgb(160, 160, 160);
   }
 
+.Form {
+    position: fixed; 
+    top: 50%;
+    left: 10%; 
+    width: 550px;   
+}
+
+.Image {
+    position: fixed;
+    height: 60%;
+    width:45%;
+    top: 20%;
+    left: 50%;
+}
+@media only screen and (max-width: 1500px) {
+    .Form {
+        margin: 0;
+        top: 20%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        width: 420px;
+    }
+
+    .Image {
+        height: 60%;
+        width:65%;
+        margin:0;
+        top: 70%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+    }
+}   
