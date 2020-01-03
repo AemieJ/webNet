@@ -5,8 +5,10 @@ import Navbars from './Pages/Navbars';
 import Display from './Pages/Display';
 import Home from './Pages/Home';
 import Create from './Pages/Create';
+import loader from './img/loader.png';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Web3 from 'web3';
+import { type } from 'os';
 
 class App extends Component {
 
@@ -21,8 +23,11 @@ class App extends Component {
       account: '',
       websiteNetwork: null,
       postCount: 0,
-      posts: []
+      posts: [],
+      loading: true
     }
+    this.createPost = this.createPost.bind(this);
+    this.postCredit = this.postCredit.bind(this);
   }
 
   async loadWeb3() {
@@ -52,16 +57,24 @@ class App extends Component {
         this.setState({
           posts: [...this.state.posts, post]
         });
-      } 
+      }
+      this.setState({posts : this.state.posts.sort((a,b)=> b.postCredit - a.postCredit)});
       console.log({posts: this.state.posts});
+      this.setState({loading: false});
 
     } else {
       window.alert('Connect to the DWN network');
     }
+  }
 
-    
-    
+  async createPost(content) {
+    let address = this.state.account.toString();
+    let receipt = await this.state.websiteNetwork.methods.createPost(content).send({from: address});
+  }
 
+  async postCredit(id, postCredit) {
+    let address = this.state.account.toString();
+    let receipt = await this.state.websiteNetwork.methods.provideCredit(id).send({from: address, value: postCredit});
   }
 
   render() {
@@ -69,13 +82,15 @@ class App extends Component {
       <div>
         <Router>
         <Navbars account={this.state.account} />
-        <div className="container-fluid mt-5">
+        {this.state.loading 
+        ? <div id="loader" className="text-center mt-5"><h3>Loading...</h3><br/> <img src={loader} height="420px" /></div>
+        :<div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 col-md-12">
               <div className="content">
                 <Switch>
-                  <Route exact path="/create" component={() => <Create />} />
-                  <Route exact path="/display" component={() => <Display posts={this.state.posts}/>} />
+                  <Route exact path="/create" component={() => <Create createPost={this.createPost}/>} />
+                  <Route exact path="/display" component={() => <Display posts={this.state.posts} postCredit={this.postCredit}/>} />
                 </Switch>
               </div>
             </main>
@@ -87,7 +102,7 @@ class App extends Component {
               </div>
             </main>
           </div>
-        </div>
+        </div> }
         </Router>
       </div>
     );

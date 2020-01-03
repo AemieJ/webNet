@@ -4906,12 +4906,12 @@
         }
       },
       "links": {},
-      "address": "0x6ec678855dD4BF7a0aCdc3c32F697CD946D79bCF",
-      "transactionHash": "0x36ac0c911ebe41bd92348ec98cf1432a4c2832f4eb24b1f305a19d18b268913b"
+      "address": "0x5f0bA5b9871D53FeBE49b4228bB6AE9Da9f552f9",
+      "transactionHash": "0xaed678f33c345d422a8e2b3537ce9855af7a7601292af4cbd1db211afb350f5b"
     }
   },
   "schemaVersion": "3.0.19",
-  "updatedAt": "2020-01-02T15:21:47.068Z",
+  "updatedAt": "2020-01-03T03:55:20.520Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
