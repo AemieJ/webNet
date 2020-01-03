@@ -32,7 +32,8 @@ npm run start
 
 ### DEMO
 
-* LANDING PAGE 
+* **LANDING PAGE** 
+
 ![Landing Page](showcase/landingPage.png)
 
 
