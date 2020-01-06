@@ -4838,6 +4838,77 @@
     "version": "0.5.12+commit.7709ece9.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {
+        "0x2a150948d00f10182c0877e265f9cf5ed6e927f5205be06635ba5f7c77bb7351": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "postCredit",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address payable",
+              "name": "author",
+              "type": "address"
+            }
+          ],
+          "name": "CreatePost",
+          "type": "event",
+          "signature": "0x2a150948d00f10182c0877e265f9cf5ed6e927f5205be06635ba5f7c77bb7351"
+        },
+        "0xa98a26a56754169ca94c35d14376ad06138e70cd18468898b23936280cf95add": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "postCredit",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address payable",
+              "name": "author",
+              "type": "address"
+            }
+          ],
+          "name": "ProvideTip",
+          "type": "event",
+          "signature": "0xa98a26a56754169ca94c35d14376ad06138e70cd18468898b23936280cf95add"
+        }
+      },
+      "links": {},
+      "address": "0x7c843A13d5b3C49191cAcf090d359C27Bd47C6C4",
+      "transactionHash": "0x6e4fc1ec90f3adebb53cd65bc825244c9d1d8c686019e286942af9279b749312"
+    },
     "5777": {
       "events": {
         "0x2a150948d00f10182c0877e265f9cf5ed6e927f5205be06635ba5f7c77bb7351": {
@@ -4911,7 +4982,7 @@
     }
   },
   "schemaVersion": "3.0.19",
-  "updatedAt": "2020-01-03T03:55:20.520Z",
+  "updatedAt": "2020-01-06T15:17:13.927Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
