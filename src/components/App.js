@@ -63,7 +63,7 @@ class App extends Component {
       this.setState({loading: false});
 
     } else {
-      window.alert('Connect to the DWN network');
+      window.alert('Connect to the Ropsten or DWN network');
     }
   }
 
