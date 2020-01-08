@@ -5,8 +5,7 @@
 ### Prerequisites
 * Following things are required to be already running on your machine for running the local copy
 1. Ganache
-2. Metamask (should be connected to the local network of ganache)
-
+2. Metamask
 
 ### Installing
 
